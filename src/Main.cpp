@@ -20,10 +20,12 @@ int main(int argc, char* argv[]){
     a = a + (float)-2.0;
     std::cout<<a.getX()<<" "<<a.getY()<<std::endl;
 
+    std::cout<<a.norm()<<std::endl;
+
     // a = (float)3.0 + a;
 
     // std::cout<<a.getX()<<" "<<a.getY()<<std::endl;
-
+    
     return 0;
 }
 

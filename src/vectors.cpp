@@ -1,4 +1,5 @@
 #include<headers/vectors.h>
+#include<math.h>
 
 template<class Scalar>
 Vector2D<Scalar>::Vector2D() {
@@ -58,17 +59,27 @@ Vector2D<Scalar> operator+(Scalar a,const Vector2D<Scalar>& v) {
 }
 
 template<class Scalar>
+Vector2D<Scalar> operator-(Scalar a,const Vector2D<Scalar>& v) {
+    return Vector2D<Scalar>(a - v.x, a - v.y);
+}
+
+template<class Scalar>
 Scalar Vector2D<Scalar>::dot(const Vector2D<Scalar>& v) {
     return x * v.x + y * v.y;
 }
 
-/*
 template<class Scalar>
-Vector2D Vector2D::cross(Vector2D v);
-*/
+Scalar Vector2D<Scalar>::cross(const Vector2D<Scalar>& v){
+    return x * v.y - y * v.x;
+}
 
 template<class Scalar>
 Scalar Vector2D<Scalar>::norm() {
+    return sqrt(x * x + y * y);
+}
+
+template<class Scalar>
+Scalar Vector2D<Scalar>::norm2() {
     return x * x + y * y;
 }
 
@@ -77,3 +88,6 @@ template class Vector2D<double>;
 
 template Vector2D<float> operator+<float>(float a, const Vector2D<float>& v);
 template Vector2D<double> operator+<double>(double a, const Vector2D<double>& v);
+
+template Vector2D<float> operator-<float>(float a, const Vector2D<float>& v);
+template Vector2D<double> operator-<double>(double a, const Vector2D<double>& v);

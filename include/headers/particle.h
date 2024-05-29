@@ -1,24 +1,24 @@
-// #ifndef INCLUDE_HEADERS_PARTICLE_H
-// #define INCLUDE_HEADERS_PARTICLE_H
+#ifndef INCLUDE_HEADERS_PARTICLE_H
+#define INCLUDE_HEADERS_PARTICLE_H
 
-// #include<headers/vectors.h>
-// #include<utility>
+#include<headers/vectors.h>
+#include<utility>
 
-// template<class precision> class Particle;
-// template<class precision> std::pair<Vector2D<precision>, Vector2D<precision>> collision(Particle<precision> a, Particle<precision> b);
+template<class Scalar> class Particle;
+template<class Scalar> std::pair<Vector2D<Scalar>, Vector2D<Scalar>> collision(Particle<Scalar> a, Particle<Scalar> b);
 
-// template<class precision>
-// class Particle {
-//     public:
-//         Particle(precision m, Vector2D<precision> p, Vector2D<precision> v);
-//         precision energy();
-//         precision momentum();
-//         friend std::pair<Vector2D<precision>, Vector2D<precision>> collision <precision>(Particle<precision> a, Particle<precision> b);
+template<class Scalar>
+class Particle {
+    public:
+        Particle(Scalar m, Vector2D<Scalar> p, Vector2D<Scalar> v);
+        Scalar energy();
+        Scalar momentum();
+        friend std::pair<Vector2D<Scalar>, Vector2D<Scalar>> collision <>(Particle<Scalar> a, Particle<Scalar> b);
 
-//     private:
-//         precision mass;
-//         Vector2D<precision> position;
-//         Vector2D<precision> velocity;
-// };
+    private:
+        Scalar mass;
+        Vector2D<Scalar> position;
+        Vector2D<Scalar> velocity;
+};
 
-// #endif 
+#endif 
