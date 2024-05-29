@@ -2,7 +2,7 @@
 #define INCLUDE_HEADERS_VECTORS_H
 
 template<class Scalar> class Vector2D;
-template<class Scalar> Vector2D<Scalar> operator+(Scalar a, Vector2D<Scalar> v);
+template<class Scalar> Vector2D<Scalar> operator+(Scalar a, const Vector2D<Scalar>& v);
 
 template<class Scalar>
 class Vector2D {
@@ -16,19 +16,21 @@ class Vector2D {
         Scalar getX();
         Scalar getY();
 
-        friend Vector2D<Scalar> operator+ <Scalar>(Scalar a, Vector2D<Scalar> v);
-    private:
-        Scalar x, y;
+        Scalar dot(const Vector2D<Scalar>& v);
+        // Vector2D cross(Vector2D v);
+        Scalar norm();
+        
+        Vector2D<Scalar> operator+(const Vector2D<Scalar>& v);
+        Vector2D<Scalar> operator-(const Vector2D<Scalar>& v);
 
-        Vector2D<Scalar> operator+(Vector2D<Scalar> v);
-        Vector2D<Scalar> operator-(Vector2D<Scalar> v);
         Vector2D<Scalar> operator+(Scalar a);
         Vector2D<Scalar> operator-(Scalar a);
 
-        Scalar dot(Vector2D v);
-        //Vector2D cross(Vector2D v);
+        friend Vector2D<Scalar> operator+<>(Scalar a, const Vector2D<Scalar>& v);        
+        
+    private:
+        Scalar x, y;  
 
-        Scalar norm();
 };
 
 #endif 

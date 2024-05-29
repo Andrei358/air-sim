@@ -1,15 +1,6 @@
 #include<headers/sim.h>
 #include<headers/shapes.h>
 
-
-
-template<class Scalar>
-Vector2D<Scalar>::Vector2D() {
-    x = 1;
-    y = 1;
-}
-
-
 Sim::Sim(const char* title, int x, int y, int w, int h, Uint32 flags) {
     SDL_Init(SDL_INIT_EVERYTHING);
 

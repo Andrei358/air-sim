@@ -21,12 +21,4 @@ class Sim {
         SimState _simState;
 };
 
-template<class Scalar>
-class Vector2D {
-    public:
-        Vector2D();
-    private:
-        Scalar x, y;
-};
-
 #endif 
