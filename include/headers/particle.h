@@ -11,8 +11,10 @@ template<class Scalar>
 class Particle {
     public:
         Particle(Scalar m, Vector2D<Scalar> p, Vector2D<Scalar> v);
+
         Scalar energy();
         Scalar momentum();
+        
         friend std::pair<Vector2D<Scalar>, Vector2D<Scalar>> collision <>(Particle<Scalar> a, Particle<Scalar> b);
 
     private:

@@ -54,12 +54,12 @@ Vector2D<Scalar> Vector2D<Scalar>::operator-(Scalar a) {
 }
 
 template<class Scalar>
-Vector2D<Scalar> operator+(Scalar a,const Vector2D<Scalar>& v) {
+Vector2D<Scalar> operator+(Scalar a, const Vector2D<Scalar>& v) {
     return Vector2D<Scalar>(a + v.x, a + v.y);
 }
 
 template<class Scalar>
-Vector2D<Scalar> operator-(Scalar a,const Vector2D<Scalar>& v) {
+Vector2D<Scalar> operator-(Scalar a, const Vector2D<Scalar>& v) {
     return Vector2D<Scalar>(a - v.x, a - v.y);
 }
 
@@ -83,6 +83,13 @@ Scalar Vector2D<Scalar>::norm2() {
     return x * x + y * y;
 }
 
+template<class Scalar> 
+std::ostream& operator<<(std::ostream& stream, const Vector2D<Scalar>& v){
+    stream<<v.x<<" "<<v.y;
+    return stream;
+}
+
+
 template class Vector2D<float>;
 template class Vector2D<double>;
 
@@ -91,3 +98,6 @@ template Vector2D<double> operator+<double>(double a, const Vector2D<double>& v)
 
 template Vector2D<float> operator-<float>(float a, const Vector2D<float>& v);
 template Vector2D<double> operator-<double>(double a, const Vector2D<double>& v);
+
+template std::ostream& operator<< <float>(std::ostream& stream, const Vector2D<float>& v);
+template std::ostream& operator<< <double>(std::ostream& stream, const Vector2D<double>& v);

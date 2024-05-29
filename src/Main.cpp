@@ -11,14 +11,13 @@ int main(int argc, char* argv[]){
 
     //sim.run();
 
-    Vector2D<float> a(1.0, 3.0), b;
-    std::cout<<a.getX()<<" "<<a.getY()<<std::endl;
+    Vector2D<double> a(1.0, 3.0), b;
+    std::cout<<a<<std::endl;
 
-    b = (float)2.0 + a;
-    std::cout<<b.getX()<<" "<<b.getY()<<std::endl;
+    b = 2.0 + a;
+    std::cout<<b<<std::endl;
 
-    a = a + (float)-2.0;
-    std::cout<<a.getX()<<" "<<a.getY()<<std::endl;
+    std::cout<<2.0 + a - 2.0<<std::endl;
 
     std::cout<<a.norm()<<std::endl;
 
