@@ -13,12 +13,15 @@ class Sim {
         void run();
 
     private:
-        void handleEvents();
+        //double t;
 
         SDL_Window* window;
         SDL_Renderer* renderer;
 
         SimState _simState;
+
+        void handleEvents();
+
 };
 
 #endif 

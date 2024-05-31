@@ -6,6 +6,8 @@
 template<class Scalar> class Vector2D;
 template<class Scalar> Vector2D<Scalar> operator+(Scalar a, const Vector2D<Scalar>& v);
 template<class Scalar> Vector2D<Scalar> operator-(Scalar a, const Vector2D<Scalar>& v);
+template<class Scalar> Vector2D<Scalar> operator*(Scalar a, const Vector2D<Scalar>& v);
+template<class Scalar> Vector2D<Scalar> operator/(Scalar a, const Vector2D<Scalar>& v);
 template<class Scalar> std::ostream& operator<<(std::ostream& stream, const Vector2D<Scalar>& v);
 
 template<class Scalar>
@@ -30,10 +32,14 @@ class Vector2D {
 
         Vector2D<Scalar> operator+(Scalar a);
         Vector2D<Scalar> operator-(Scalar a);
+        Vector2D<Scalar> operator*(Scalar a);
+        Vector2D<Scalar> operator/(Scalar a);
 
         friend Vector2D<Scalar> operator+<>(Scalar a, const Vector2D<Scalar>& v);        
-        friend Vector2D<Scalar> operator-<>(Scalar a, const Vector2D<Scalar>& v);        
-
+        friend Vector2D<Scalar> operator-<>(Scalar a, const Vector2D<Scalar>& v);
+        friend Vector2D<Scalar> operator*<>(Scalar a, const Vector2D<Scalar>& v);        
+        friend Vector2D<Scalar> operator/<>(Scalar a, const Vector2D<Scalar>& v);        
+        
         friend std::ostream& operator<< <>(std::ostream& stream, const Vector2D<Scalar>& v);
     private:
         Scalar x, y;  
