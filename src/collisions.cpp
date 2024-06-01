@@ -2,14 +2,24 @@
 #include<headers/wall.h>
 #include<headers/particle.h>
 #include<utility>
+#include<iostream>
 
 template<class Scalar>
 Vector2D<Scalar> collision(Particle<Scalar> &p, Wall<Scalar> &w) {
     Vector2D<Scalar> diff = w.p1 - p.position;
     Vector2D<Scalar> n = (w.p2 - w.p1) / (w.p2 - w.p1).norm();
-    Vector2D<Scalar> normal = diff - (diff.dot(n)) * n;
+    Vector2D<Scalar> normal = (diff - (diff.dot(n)) * n) / (diff - (diff.dot(n)) * n).norm();
+    Vector2D<Scalar> proj = p.velocity.dot(normal) * normal;
 
-    Vector2D<Scalar> new_vel = p.velocity - (Scalar)1.0 * normal;
+    Vector2D<Scalar> new_vel = p.velocity - (Scalar)2.0 * proj;
+
+    std::cout<<"##########"<<std::endl;
+    std::cout<<p.velocity<<std::endl;
+    std::cout<<normal<<std::endl;
+    std::cout<<proj<<std::endl;
+    std::cout<<new_vel<<std::endl;
+    std::cout<<"##########"<<std::endl;
+
 
     p.velocity = new_vel;
 

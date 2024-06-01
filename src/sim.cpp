@@ -70,7 +70,7 @@ void handle_collisions(std::vector<Particle<double>>& particles, std::vector<Wal
 
 void Sim::run() {
     float t = 0.0;
-    float dt = 0.4;
+    float dt = 2.0;
 
     std::vector<Particle<double>> particles;
     particles.push_back(Particle<double>(10, Vector2D<double>(100,100), Vector2D<double>(10,10)));
