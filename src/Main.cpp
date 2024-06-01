@@ -10,7 +10,6 @@ int main(int argc, char* argv[]){
     int screenWidth = 800;
     int screenHeight = 800;
 
-
     Sim sim("Simulation", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, screenWidth, screenHeight, SDL_WINDOW_SHOWN);
 
     sim.run();
